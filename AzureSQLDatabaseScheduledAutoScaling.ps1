@@ -79,11 +79,11 @@ param(
 [parameter(Mandatory=$false)]
 [string] $environmentName = "AzureCloud",   
 
-[parameter(Mandatory=$true)]
-[string] $resourceGroupName,
-
 [parameter(Mandatory=$false)]
 [string] $azureRunAsConnectionName = "AzureRunAsConnection",
+
+[parameter(Mandatory=$true)]
+[string] $resourceGroupName,
 
 [parameter(Mandatory=$true)]
 [string] $serverName,
@@ -92,7 +92,7 @@ param(
 [string] $databaseName,
 
 [parameter(Mandatory=$true)]
-[string] $scalingSchedule,
+[string] $scalingSchedule = "[{ Edition: 'Standard', Tier: 'S0'}]",
 
 [parameter(Mandatory=$false)]
 [string] $scalingScheduleTimeZone = "W. Europe Standard Time",
